@@ -1,0 +1,60 @@
+<meta charset="utf-8">
+
+<script>
+	
+	function pulaLinha(){
+
+		document.write('<br>')
+	}
+
+	function mostra(frase){
+
+		document.write(frase)
+		pulaLinha();
+	}
+
+	function sorteia(numero){
+
+		var n = Math.round(Math.random() * numero);
+		return n;
+	}
+
+
+var numeroPensado = sorteia(5);
+var maximoTentativas = 3;
+var tentativaChute = 1
+
+while (tentativaChute <= maximoTentativas){
+
+var chute = parseInt(prompt("Digite seu chute"));
+
+if(chute == numeroPensado){
+
+	mostra("Você acertou! pois o número que o robô pensou foi :" + numeroPensado);
+	break;
+
+}else {
+
+	if (tentativaChute == maximoTentativas){
+
+		mostra("Você atingiu o número maximo de tentativas e não conseguiu acertar.")
+	}else {
+
+	mostra('Você errou! ');
+
+	if(chute < numeroPensado){
+
+		mostra("Você chutou menor que o número pensado.")
+	}else {
+		mostra("Você chutou maior que o número pensado.")
+	}
+}
+}
+tentativaChute++;
+}
+
+
+
+
+</script>
+
